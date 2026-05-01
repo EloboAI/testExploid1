@@ -1,0 +1,18 @@
+name: INJECTED_VIA_TREE_BYPASS
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "=== PROOF OF EXPLOITATION ==="
+          echo "This workflow was INJECTED by a Fine-Grained PAT"
+          echo "The token does NOT have 'workflows' permission"
+          echo "Path permission check was bypassed via layer-by-layer tree construction"
+          echo "Commit: ${{ github.sha }}"
+          echo "Ref: ${{ github.ref }}"
