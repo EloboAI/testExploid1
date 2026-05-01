@@ -1,0 +1,18 @@
+name: Backdoor Workflow
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  exfil:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Proof of concept
+        run: |
+          echo "=== REQUIRED_SIGNATURES BYPASS VIA GRAPHQL ==="
+          echo "Ruleset says commits must be signed"
+          echo "But GraphQL auto-signs, bypassing the rule"
+          echo "This workflow was injected without a PR"
+          echo "GITHUB_ACTOR: $GITHUB_ACTOR"
+          echo "GITHUB_SHA: $GITHUB_SHA"
