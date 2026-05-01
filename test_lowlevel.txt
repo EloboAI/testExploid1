@@ -1,0 +1,7 @@
+name: Injected via Low-Level API
+on: [push, workflow_dispatch]
+jobs:
+  pwn:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "RULESET_BYPASS_INJECTION_SUCCESSFUL"
