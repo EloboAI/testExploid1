@@ -1,0 +1,1 @@
+GraphQL signed commit test
